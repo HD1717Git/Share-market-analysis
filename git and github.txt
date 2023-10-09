@@ -1,0 +1,255 @@
+A step by step procedure of Source code management on Git and GitHub
+
+1) Launch Git Bash and we have to configure Name and Email
+
+2) So write the command.
+
+ git config --global user.name "write name"
+ git config --global user.email "write email"
+ git config --global init.default branch main
+ git config -h
+ git help config
+ clear
+ 
+3) For change directory to look at where we have files the command is
+ ------>  cd and type location of your files
+ex: cd c:/file
+
+4) To now turn this into git repository the command is
+ 
+---->   git init
+
+*we have now created our first repository.(then go to your local file and select hide file to show the git folder in that file)
+
+5) To tell us the status of our repository the command is 
+
+ ------> git status
+
+6) To track a file in that repository the command is 
+ 
+------>   git add "file name"
+
+7) To untrack that file the command is 
+ 
+-----> git rm --cached "file name"aaaa
+
+note : If we want to ignore a file completely  open up file explorer we are going to create a new txt document
+       name it as 
+
+------>  .gitignore
+
+ open the file  in notepad add # ignore all the .txt files underneaath that type         
+       
+----->  *.txt
+       
+and save and in git give command 
+  
+------>  git status
+
+ then git will ignore that file.
+
+8) To track all files the command is 
+ 
+------>   git add --all 
+
+9) To commit the file the command is 
+ 
+-----> git commit -m "first commit -commiting all files to the repository"
+
+*you just finished your first commit
+
+10) If we want to modify the file and changed contents of the file in notepad.within git i will give command 
+ 
+----->   git status
+
+*git recognizes that file has been modified 
+
+11) To see what's been modified git has a command 
+ 
+----->  git diff
+
+*It will show us what the differences are
+
+12) To add the change 
+ 
+----->   git add "file name"
+
+*the file is now currently sitting in staging (staging is a place where your files sit until you're ready to commit them)
+
+13) to remove file from staging 
+ 
+----->  git restore --staged "file name"
+
+14) If we want to skip over staging and commit the file 
+ 
+----->  git commit -a -m "updated text to free range"
+
+*it skips over the staging step and it's now commited this change
+
+note: If you delete the file in the file explorer, and want to restore it the command is 
+        
+------>     git restore "file name"
+
+15) If you want to renaming the file in the terminal
+ 
+------>  git mv "old filename" "new name"
+
+*the file name is changed
+
+16) To commit 
+ 
+------>   git commit -m "changnged the file name of an image"
+
+17) To review all the commits that we made 
+ 
+------>   git log
+
+18) To see what's actually changed in these different commits
+ 
+------>   git log -p
+
+*to exit this view press Q
+
+19) We can also set up additional branches (a coppy of main branch) To create a new branch
+ 
+------>   git branch branch-name
+
+*Now we should have new branch
+
+20) To see how many branches we have 
+ 
+------>  git branch
+
+21) To switch into the new branch 
+ 
+------>  git switch "branch name"
+
+22) Now modify the file in notepad
+ 
+------>  git status
+  
+*It shows one modified file
+ 
+23) to commit the file 
+ 
+------>  git commit -a -m "updated file"
+
+24) To switch back to main
+ 
+------>  git switch main
+
+25) To merge all the two branches
+ 
+------->  git merge -m "merge branch-name back to main" 
+
+26) To delete the additional branch 
+ 
+------->   git branch -d branch name
+
+note:what if you create a branch and then you try to merge it back in but main has changed since you
+ created your branch in that case you'll have a merge conflict
+
+-> First lets create a branch and switch to the new branch
+ 
+------>  git switch -c branch-name
+
+*we have switched to new branch
+
+if you want to make some changes to a file and modified the file & now we commit the changes
+ 
+------> git commit -a -m "update file text"
+
+lets switch to main branch and we will make change's there as well
+ 
+---->   git switch main
+
+we wii change similar change but write different name in that file and commit it 
+
+----->  git commit -a -m "update file text"
+
+Lets now try merging the changes from update text back to main to see
+ 
+------->   git merge updateText
+
+*****the merge will fail*******
+
+lets move to file explorer we can see all of the files for the merging view and open
+the file in notepad there we will see some text that will says main info and down to that we 
+will see crerated branch text, that we have commited and we could decide which one to keep. so delete head if 
+we want to keep updateText and save file or vice-versa
+
+27) To commit 
+ 
+----->  git commit -a -m "update file"
+
+28) Now launch GitHub
+
+30) we can now create a cloud repo.
+
+31) create a new repo
+
+32) To set up a repo we need to enter in a name for this repo and create repository
+
+33) there we can see the option to push an existing repository from the command line
+
+34) there will be an URL and that URL is specific to your github account. copy it and past it in git bash
+
+by right clicking it, you will find an pasting option and clone to your remote repo. 
+ 
+it is establishing a remote connection with git hub.
+
+35) And copy the other options
+ 
+* now we can see that entire local repository has been pushed to git hub into the cloud repository 
+
+36) In github repository we can add files,edit existing files,edit issues and pull requests etc..
+
+37)  issues is where you can enter in feature requests or maybe someone finds a bug we can directly enter into this page
+
+38) lets go to new issues give it a title and we can assign this issue to some one and submit issue
+
+39) lets go to the code tab and edit the issue
+
+40) with in the edit view change it to soft wrap so it wraps and edit the issue
+
+41) In commit changes we could commit it directly to the main branch
+
+                               OR
+
+    we have the option to create a new branch for this commit and to start a pull request.
+
+42) what is a pull request( we can start a pull request and this change has to be approved especially if you are working with others
+                             
+you can have other people go in and make changes and we can have them submit a pull request)
+
+43) Then create pull request
+
+44) over in the right hand side there is a section called development. We can tie this change or pull request back to the original issue
+
+45) Then confirm the merge
+
+46) Lets go to the main repositoty view where you can create and publish  release
+
+47) now any one can come in and download the sorce code from our website
+
+48) We made a few changes in github on the cloud.To get those changes back onto our local computer there are few different commands that we can use 
+ 
+ ----->  git fetch
+   
+*this will download all the history from the remote tracking branches, then
+ 
+ ----->  git merge
+
+* that will now merge i in with what we have on our local machine
+                      
+OR
+
+We can directly pull both fetch and merge with a single command that is 
+   
+-----> git pull
+     
+
+
+
+ 
+ 
